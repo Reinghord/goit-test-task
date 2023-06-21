@@ -3,11 +3,12 @@ import { NavLink } from 'react-router-dom';
 
 export const Box = styled.div`
   padding-inline: 28px;
+  padding-top: 28px;
+  padding-bottom: 28px;
 `;
 
 export const StyledLink = styled(NavLink)`
   display: flex;
-  margin-top: 26px;
   justify-content: center;
   align-items: center;
   padding: 14px 28px;
