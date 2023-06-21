@@ -1,11 +1,11 @@
-// import './App.css';
-// import { getUsers } from "./utils/mockapi";
-import { useEffect } from 'react';
+import { useEffect, lazy, Suspense } from 'react';
 import { useDispatch } from 'react-redux';
 import { getUsers } from './redux/users/users-operation';
 import { Routes, Route } from 'react-router-dom';
-import HomePage from './pages/HomePage/HomePage';
-import TweetsPage from './pages/TweetsPage/TweetsPage';
+import SuspenseComponent from './components/SuspenseComponent/SuspenseComponent';
+
+const HomePage = lazy(() => import('./pages/HomePage/HomePage'));
+const TweetsPage = lazy(() => import('./pages/TweetsPage/TweetsPage'));
 
 function App() {
   const dispatch = useDispatch();
@@ -13,11 +13,13 @@ function App() {
     dispatch(getUsers());
   }, [dispatch]);
   return (
-    <Routes>
-      <Route path="/" element={<HomePage />}></Route>
-      <Route path="/tweets" element={<TweetsPage />}></Route>
-      <Route path="*" element={<HomePage />}></Route>
-    </Routes>
+    <Suspense fallback={<SuspenseComponent />}>
+      <Routes>
+        <Route path="/" element={<HomePage />}></Route>
+        <Route path="/tweets" element={<TweetsPage />}></Route>
+        <Route path="*" element={<HomePage />}></Route>
+      </Routes>
+    </Suspense>
   );
 }
 
