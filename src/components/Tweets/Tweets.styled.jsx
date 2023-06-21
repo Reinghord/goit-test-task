@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 
 export const StyledButton = styled.button`
+  font-weight: 600;
   display: flex;
   margin-inline: auto;
   margin-top: 26px;

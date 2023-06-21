@@ -12,7 +12,7 @@ export const Box = styled.div`
 
 export const StyledP = styled.p`
   font-size: 20px;
-  line-height: 24px;
+  line-height: 1.2;
 
   color: #ebd8ff;
 `;

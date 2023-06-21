@@ -78,7 +78,7 @@ export const StyledText = styled.p`
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
-  line-height: 24px;
+  line-height: 1.2;
   text-transform: uppercase;
   text-align: center;
 
@@ -90,6 +90,8 @@ export const StyledText = styled.p`
 `;
 
 export const StyledButton = styled.button`
+  font-weight: 600;
+
   display: flex;
   margin-inline: auto;
   margin-top: 26px;
