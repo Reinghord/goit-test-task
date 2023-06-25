@@ -9,6 +9,7 @@ import { StyledButton } from './Tweets.styled';
 function Tweets() {
   const [sliceEnd, setSliceEnd] = useState(3);
   const filteredUsers = useSelector(selectFilteredUsers);
+  
 
   return (
     <>
